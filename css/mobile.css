@@ -1,0 +1,128 @@
+@media (width < 1500px) {
+    nav.with-header > h1 {
+        font-size: 10vw;
+        text-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    }
+}
+
+
+
+@media (width < 1350px) {
+    nav.with-header > table, nav.with-header > div.line {
+        display: none;
+    } 
+}
+
+
+
+@media (width < 1200px) {
+    nav.full-height {
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    button::before {
+        display: none;
+    }
+    button:hover {
+        letter-spacing: 0;
+    }
+}
+
+
+
+@media (width < 1000px) {
+    nav > table,
+    nav > div.line,
+    article > h2::before,
+    article > div > div.langage-buttons-container,
+    article > div > p#langage-infos,
+    nav.full-height > ul > li > a::before {
+        display: none;
+    }
+    #page {
+        background: linear-gradient(60deg, var(--col-1), var(--col-3));
+    }
+    nav.full-height > ul > li:hover > a {
+        left: 0px;
+    }
+    nav.with-header > h1 {
+        font-size: 9.5vw;
+        text-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    }
+    article > h2 {
+        width: 100%;
+        padding: 1vw 1vw;
+        text-align: center;
+        font-size: 6.5vw;
+    }
+    article > div {
+        margin-top: var(--gap);
+    }
+    article > div > div.mobile-langage-container {
+        display: flex;
+    }
+    article > form > div > div > input,
+    article > form > div > div > textarea {
+        width: 100%;
+    }
+}
+
+
+
+@media (width < 800px) {
+    #page {
+        background: linear-gradient(70deg, var(--col-1), var(--col-3));
+    }
+    article > div > img {
+        width: 100%;
+        height: auto;
+    }
+    button {
+        font-size: 5vw;
+        border-radius: 3vw;
+    }
+    div.mobile-langage-container > p {
+        font-size: 4vw;
+    }
+}
+
+
+
+@media (width < 700px) {
+    nav::after,
+    section::before,
+    nav.with-header > h1,
+    nav.full-height {
+        display: none;
+    }
+    nav.full-height + nav.with-header {
+        display: block;
+    }
+    nav.full-height > ul > li > a {
+        font-size: 9vw;
+    }
+    nav.with-header {
+        min-height: 0;
+        height: auto;
+    }
+}
+
+
+
+@media (width < 600px) {
+    #page {
+        background: linear-gradient(80deg, var(--col-1), var(--col-3));
+    }
+    section {
+        --section-padding-inline: 8vw;
+    }
+}
+
+
+
+@media (width < 300px) {
+    * {
+        display: none;
+    }
+}

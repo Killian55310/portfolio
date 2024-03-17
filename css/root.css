@@ -1,0 +1,11 @@
+:root {
+    --bold-font: "dizhitl-bold";
+    --normal-font: "dizhitl-medium";
+    --elements-trasitions-height: 70px;
+    --transition-delay: 0.35s;
+    --section-padding-inline: 15vw; 
+
+    --col-1: #6f3cfd;
+    --col-2: #ff58e9; 
+    --col-3: #ff6262; 
+}

@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: var(--normal-font);
+    outline: none;
+    border: none;
+}
+html {
+    background: linear-gradient(45deg, var(--col-1), var(--col-3));
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+::selection {
+    color: white;
+    background-color: var(--col-2);
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+
+#transition {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    z-index: 10;
+}
+#transition.show {
+    animation: show-transition var(--transition-delay) forwards ease-in;
+}
+#transition.hide {
+    animation: hide-transition var(--transition-delay) 0.5s forwards ease-out;
+}
+#mouse-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 400px 150px var(--col-2);
+    opacity: 0;
+    transition: 0.5s opacity;
+}
+#modal-sent {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    opacity: 0;
+    animation: fade-in 0.3s 0.5s forwards, fade-out 0.3s 2s forwards, remove 0s 2.3s forwards;
+    z-index: 9;
+}
+#modal-sent::before {
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 7;
+}
+#modal-sent > h2 {
+    color: lime;
+    z-index: 8;
+}
+#page {
+    min-height: 100vh;
+}
+.mouse-click {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border: 5px solid white;
+    rotate: 45deg;
+    translate: -50% -50%;
+    scale: 0;
+    animation: scale-in 0.3s forwards, fade-out 0.15s 0.15s forwards;
+    z-index: 100;
+    pointer-events: none;
+}
+
+
+
+button {
+    margin: auto;
+    padding: 10px 30px;
+    display: block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 5px solid white;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.3), inset 0 0 15px 5px rgba(0,0,0,0.3);
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+    cursor: pointer;
+    transition: 0.3s !important;
+    overflow: hidden;
+    filter: saturate(1.5);
+    user-select: none;
+}
+button:hover {
+    letter-spacing: 5px;
+}
+button::before {
+    width: 0%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--col-1) 0%, var(--col-3) 100%);
+    transition: 0.4s;
+    opacity: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+button:hover::before {
+    width: 100%;
+    opacity: 1;
+    filter: blur(0px);
+}
+
+
+
+.langage {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    border: 6px solid rgba(0,0,0,0.2);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+.langage:hover {
+    scale: 1.2;
+    font-size: 1.7rem;
+}
+.html {
+    background-color: #ff8e62; 
+}
+.css {
+    background-color: #62abff; 
+}
+.js {
+    background-color: #ffda62; 
+}
+.php {
+    background-color: #7f62ff; 
+}
+.sql {
+    background-color: #4c4ece; 
+}
+
+
+
+nav {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+nav::after {
+    width: 100%;
+    height: var(--elements-trasitions-height);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
+    z-index: 1;
+}
+
+
+
+nav.full-height {
+    padding-inline: 15%;
+}
+nav.full-height > ul > li > a {
+    position: relative;
+    left: 0;
+    color: white;
+    font-size: 400%;
+    font-family: var(--bold-font);
+    text-transform: uppercase;
+    transition: left 0.3s;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+nav.full-height > ul > li:hover > a {
+    left: 150px;
+}
+nav.full-height > ul > li > a::before {
+    width: 500%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -500%;
+    background-image: url("../img/arrow-right.png");
+    background-size: contain;
+    background-position: right;
+    transition: 0.4s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+nav.full-height > ul > li:hover > a::before {
+    left: calc(-400% + 30px);
+    opacity: 0.5;
+}
+
+
+
+nav.with-header {
+    --header-height: 50px;
+    display: block;
+}
+nav.with-header > header {
+    width: 100%;
+    height: var(--header-height);
+}
+nav.with-header > header > ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav.with-header > header > ul > li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid white;
+}
+nav.with-header > header > ul > li > a {
+    height: 100%;
+    padding-inline: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: 0.4s;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+nav.with-header > header > ul > li > a:hover {
+    letter-spacing: 3px;
+}
+nav.with-header > h1 {
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--bold-font);
+    font-size: 12rem;
+    text-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    scale: 0;
+    animation: scale-in 1.5s 0.3s forwards, fade-in 1.5s 0.3s forwards;
+    user-select: none;
+}
+
+
+
+nav.full-height + nav.with-header {
+    display: none;
+}
+
+
+
+nav > table {
+    position: absolute;
+    border-collapse: collapse;
+}
+nav > table.top-left {
+    top: 0;
+    left: 0;
+}
+nav > table.top-right {
+    top: 0;
+    right: 0;
+}
+nav > table td {
+    width: 120px;
+    height: 120px;
+}
+nav > table .cross {
+    background-color: rgba(0,0,0,0.1);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+
+
+nav > div.line {
+    width: 800px;
+    height: 15px;
+    position: absolute;
+    top: 200px;
+    left: -150px;
+    background-color: rgba(255,255,255,0.5);
+    transform: rotate(-45deg);
+}
+
+
+
+section {
+    --gap: 60px;
+    padding: calc(var(--gap) * 2) var(--section-padding-inline) 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+section::before {
+    width: 100%;
+    height: var(--elements-trasitions-height);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
+    z-index: 1;
+}
+nav > section::before, nav > section > article::after {
+    display: none;
+}
+article {
+    padding-bottom: calc(var(--gap) * 3);
+    position: relative;
+}
+article:only-of-type {
+    min-height: calc(100vh -  var(--gap));
+}
+article:last-of-type::after {
+    width: 100vw;
+    height: 75px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--section-padding-inline) * -1);
+    background-color: rgba(0,0,0,0.2);
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+
+
+article > h2 {
+    padding: 17px 35px;
+    position: relative;
+    display: inline-block;
+    font-size: 3rem;
+    background-color: var(--col-3);
+    border: 5px solid rgba(255,255,255,0.2);
+    border-bottom-right-radius: 26px 40px;
+    border-top-left-radius: 26px 40px;
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.4);
+}
+article > h2::before {
+    width: var(--section-padding-inline);
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(var(--section-padding-inline) * -1 - 15px);
+    background-image: url("../img/arrow-right.png");
+    background-size: contain;
+    background-position: right;
+}
+
+
+
+article > div {
+    margin-top: calc(var(--gap) * 1.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+}
+article > div > p {
+    align-self: normal;
+    font-size: 1.3rem;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+article > div > p#langage-infos {
+    align-self: center;
+    font-size: 1.7rem;
+}
+article > div > img {
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+article > div > div.flex-row-container {
+    align-self: normal;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+article > div > div.mobile-langage-container {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 2vw;
+}
+article > div > img {
+    height: 300px;
+}
+
+
+
+article > form {
+    margin-top: calc(var(--gap) * 1.5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+article > form * {
+    font-size: 1.4rem;
+}
+article > form > div {
+    display: flex;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+article > form > div > div {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+article > form label {
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+article > form input, article > form textarea {
+    padding: 10px 15px;
+    color: rgb(30,30,30);
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.4);
+    outline: 0px solid white;
+    transition: 0.1s;
+}
+article > form input:focus, article > form textarea:focus {
+    outline: 3px solid var(--col-3);
+    background-color: rgb(240,240,240);
+}
+article > form input::placeholder, article > form textarea::placeholder {
+    color: rgb(150,150,150);
+}
+article > form textarea {
+    min-height: 100px;
+    max-height: 500px;
+    resize: vertical;
+}
+article > form button {
+    margin: 0;
+    align-self: flex-start;
+    font-size: 2rem;
+}

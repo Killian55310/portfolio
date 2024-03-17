@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIMON Killian - Portfolio</title>
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/root.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    </head>
+    <body>
+        <div id="transition" class="hide"></div>
+        <div id="mouse-gradient"></div>
+        <div id="page">
+            <nav class="with-header">
+                <table class="top-left">
+                    <tr>
+                        <td class="cross" data-aos="fade-right" data-aos-delay="100"></td>
+                        <td class="cross" data-aos="fade-right" data-aos-delay="150"></td>
+                    </tr>
+                    <tr>
+                        <td class="cross" data-aos="fade-right" data-aos-delay="200"></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="top-right">
+                    <tr>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="250"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="200"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="150"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="100"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="300"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="350"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="400"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="450"></td>
+                    </tr>
+                </table>
+                <div class="line"></div>
+                <header>
+                    <ul data-aos="fade-up" data-aos-delay="200">
+                        <li><a href="index.html">accueil</a></li>
+                    </ul>
+                </header>
+                <h1>mes projets</h1>
+            </nav>
+            <section>
+                <article data-aos="fade-right">
+                    <h2>Projet 1</h2>
+                    <div>
+                        <p data-aos="fade-right">
+                            Ce projet est la recréation d'un jeu appelé "Geometry Dash".
+                            C'est un jeu de plateforme dans lequel le joueur dirige un cube qui peut sauter pour esquiver divers obstacles tels que des blocs, des pics ou des scies.<br>
+                            Projet réalisé avec HTML CSS et JS.
+                        </p>
+                        <img src="img/gd-preview.jpg" alt="" data-aos="fade-right">
+                        <button data-aos="fade-right">Essayer</button>
+                    </div>
+                </article>
+                <article data-aos="fade-right">
+                    <h2>Projet 2</h2>
+                    <div>
+                        <p data-aos="fade-right">
+                            Ce projet est un devoir donné en cours où je devais créer un site web à partir d'un pdf de déclaration de revenus.
+                            J'ai donc recréer le pdf en changant la mise en page ainsi que son style visuel.<br>
+                            Projet réalisé avec HTML et CSS.
+                        </p>
+                        <img src="img/impots-preview.png" alt="" data-aos="fade-right">
+                        <button data-aos="fade-right">Visiter</button>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <script src="js/app-transitions.js"></script>
+        <script src="js/app-mouse.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

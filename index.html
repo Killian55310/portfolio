@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Je m'appel SIMON Killian et voici mon portfolio.">
+        <title>SIMON Killian - Portfolio</title>
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/root.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    </head>
+    <body>
+        <div id="transition" class="hide"></div>
+        <div id="mouse-gradient"></div>
+        <div id="page">
+            <nav class="full-height">
+                <table class="top-left">
+                    <tr>
+                        <td class="cross" data-aos="fade-right" data-aos-delay="100"></td>
+                        <td class="cross" data-aos="fade-right" data-aos-delay="150"></td>
+                    </tr>
+                    <tr>
+                        <td class="cross" data-aos="fade-right" data-aos-delay="200"></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="top-right">
+                    <tr>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="250"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="200"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="150"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="100"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="300"></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="350"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="400"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="cross" data-aos="fade-left" data-aos-delay="450"></td>
+                    </tr>
+                </table>
+                <div class="line"></div>
+                <ul>
+                    <li data-aos="fade-right" data-aos-delay="150"><a href="#about-me">me concernant</a></li>
+                    <li data-aos="fade-right" data-aos-delay="250"><a href="projects.html">mes projets</a></li>
+                </ul>
+            </nav>
+            <nav class="with-header">
+                <header>
+                    <ul data-aos="fade-up" data-aos-delay="200">
+                        <li><a href="projects.html">projets</a></li>
+                    </ul>
+                </header>
+            </nav>
+            <section id="about-me">
+                <article data-aos="fade-right">
+                    <h2>me concernant</h2>
+                    <div>
+                        <div class="flex-row-container langage-buttons-container" data-aos="fade-right">
+                            <div class="langage html">html</div>
+                            <div class="langage css">css</div>
+                            <div class="langage js">js</div>
+                            <div class="langage php">php</div>
+                            <div class="langage sql">sql</div>
+                        </div>
+                        <p id="langage-infos"> </p>
+                        <div class="flex-col-container mobile-langage-container">
+                            <p>HTML: 7 années d'expérience.</p>
+                            <p>CSS: 7 années d'expérience.</p>
+                            <p>JavaScript: 3 années d'expérience (mon langage préféré).</p>
+                            <p>PHP: 5 années d'expérience.</p>
+                            <p>SQL: 4 années d'expérience.</p>
+                        </div>
+                        <button onclick="window.open('cv.html')" data-aos="fade-right">Visionner mon CV</button>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <script src="js/app-transitions.js"></script>
+        <script src="js/app-mouse.js"></script>
+        <script src="js/app-langages.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

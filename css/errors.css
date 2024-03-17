@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--normal-font);
+    color: white;
+}
+html {
+    overflow: hidden;
+}
+::selection {
+    color: white;
+    background-color: var(--col-2);
+}
+table {
+    position: absolute;
+    border-collapse: collapse;
+}
+table.top-left {
+    top: 0;
+    left: 0;
+}
+table.top-right {
+    top: 0;
+    right: 0;
+}
+table td {
+    width: 120px;
+    height: 120px;
+}
+table .cross {
+    background-color: rgba(0,0,0,0.1);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+#bg-line {
+    height: 40vw;
+    position: absolute;
+    top: -12vw;
+    left: 83vw;
+    border-left: 15px solid rgba(255,255,255,0.5);
+    rotate: 295deg;
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+
+main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, var(--col-1) 0%, var(--col-3) 100%);
+}
+main > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+main > div > * {
+    font-weight: lighter;
+    text-align: center;
+}
+h1 {
+    font-size: 20rem;
+    text-shadow: 10px 10px 30px rgba(0,0,0,0.4);
+    scale: 0;
+    animation: scale-in 1s forwards;
+    user-select: none;
+}
+p {
+    font-size: 2em;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+}
+
+
+button {
+    margin: auto;
+    padding: 10px 30px;
+    display: block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 5px solid white;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 0 0 15px 5px rgba(0,0,0,0.3), inset 0 0 15px 5px rgba(0,0,0,0.3);
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.6);
+    cursor: pointer;
+    transition: 0.3s !important;
+    overflow: hidden;
+    filter: saturate(1.5);
+    user-select: none;
+}
+button:hover {
+    letter-spacing: 5px;
+}
+button::before {
+    width: 0%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--col-1) 0%, var(--col-3) 100%);
+    transition: 0.4s;
+    opacity: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+button:hover::before {
+    width: 100%;
+    opacity: 1;
+    filter: blur(0px);
+}
